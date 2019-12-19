@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="/bootstrap/dist/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/css/style.css")
+     
+        script(src="/jquery/dist/jquery.min.js")
+        script(src="/bootstrap/dist/js/bootstrap.min.js")
+        title  articles
+    body
+        .d-flex.flex-column.flex-md-row.align-items-center.p-3.px-md-4.mb-3.bg-white.border-bottom.shadow-sm
+            if user
+                h5.my-0.mr-md-auto.font-weight-normal.text-capitalize node application           #{user.name} 
+            else
+                h5.my-0.mr-md-auto.font-weight-normal.text-capitalize node application 
+
+ 
+            nav.my-2.my-md-0.mr-md-3.d-flex
+                a.p-2.flex-row.text-dark(href='/') Articles
+
+                if user
+                    a.p-2.text-dark(href='/articles/add') Add article 
+                    a.p-2.text-dark(href='/user/logout') Logout
+                else      
+                    a.p-2.text-dark(href='/user/login') Login
+           
+               
+            if !user 
+                a.btn.btn-outline-primary(href='/user/registration') Sign up
+
+        .container
+            != messages('message', locals)
+            block content
+            br
+        
+            footer
+                p copyright
+        
+
+        script(src="/jquery/dist/jquery.min.js")
+        script(src="/bootstrap/dist/js/bootstrap.min.js")
+        script(src="/js/main.js")
+
+
+                

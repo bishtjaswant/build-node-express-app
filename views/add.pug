@@ -1,0 +1,24 @@
+extends layouts/master
+ 
+block content
+    
+        h1.text-center.text-primary.shadow.text-capitalize=title
+      
+        form(action="/articles/add" method="post")  
+          
+            .form-group
+                        label(for="") Title
+                        input(type="text" class="form-control" name="title" placeholder="title.." value="") 
+      
+            //- .form-group
+            //-             label(for="") Author
+            //-             input(type="text" class="form-control"  name="author" placeholder="author.." value="")
+         
+         
+            .form-group            
+                        label(for="") Description
+                        textarea(name="desc" class="form-control" placeholder="description of article" cols="30", rows="10")
+
+
+            .form-group
+                        input(type="submit" class="btn btn-primary" value="add aritcle")

@@ -1,0 +1,17 @@
+extends layouts/master
+ 
+block content
+    h1.text-primary.text-capitalize #{article.title}
+
+    .card
+    .card-body
+        p #{author}   has wrote about #{article.title}
+        p.lead #{article.desc} 
+     
+        
+    .card-footer.d-flex.flex-row-reverse
+            if user
+               if user._id==article.author
+                    button(data-id=article._id  data-title=article.title type="button" id="remove_article_id" class="btn btn-sm btn-danger") REMOVE
+                    a(href="/article/edit/"+article._id  class="btn btn-sm btn-primary") EDIT
+                    

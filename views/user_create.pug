@@ -1,0 +1,22 @@
+extends layouts/master
+ 
+block content
+    form(method='post' action='/user/registration')
+        .form-group
+            label(for='name') Name
+            input#name.form-control(type='text' name='name' required='')
+        
+        .form-group
+            label(for='email') Email
+            input#email.form-control(type='text' name='email' required='')
+        
+        .form-group
+            label(for='password') Password
+            input#password.form-control(type='password' name='password' required='')
+        
+        
+        .form-group
+            label(for='cpassword') Confirm Password
+            input#cpassword.form-control(type='password' name='cpassword' required='')
+    
+        input.btn.btn-sm.btn-success(type='submit', name='user', value='add user')

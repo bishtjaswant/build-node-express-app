@@ -1,0 +1,15 @@
+extends layouts/master
+ 
+block content
+    h1.text-center.text-primary.shadow.text-capitalize=title
+   
+
+    ul.list-group.shadow
+        each val,index in body
+            li.list-group-item
+                a(href="/article/"+val._id)=val.title
+        else 
+            li.list-group-item there are no items yet .......
+
+
+    

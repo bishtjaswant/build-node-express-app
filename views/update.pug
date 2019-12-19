@@ -1,0 +1,25 @@
+extends layouts/master
+ 
+block content
+    h1.text-center.text-primary.text-capitalize update for  {{ #{title} }}
+        
+        
+    form(action="/article/update/"+data['_id'] method="post")  
+          
+            .form-group
+                        label(for="") Title
+                        input(type="text" class="form-control" name="title" placeholder="title.." value=title  ) 
+      
+            .form-group
+                        label(for="") Author
+                        input(type="text" disabled='' class="form-control"  name="author" placeholder="author.." value=author)
+         
+         
+            .form-group            
+                        label(for="") Description
+                        textarea(name="desc" class="form-control" placeholder="description of article" cols="30", rows="10")=data.desc
+
+
+            .form-group
+                        input(type="submit" class="btn btn-primary" value="update aritcle")
+                        a(href="/" class="btn btn-default") cancel

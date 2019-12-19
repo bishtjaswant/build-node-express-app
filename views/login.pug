@@ -1,0 +1,15 @@
+extends layouts/master
+ 
+block content
+    form(method='post' action='/user/login')
+        h2 Login Account 
+        
+        .form-group
+            label(for='email') Email
+            input#email.form-control(type='text' name='email' )
+          
+        .form-group
+            label(for='password') Password
+            input#password.form-control(type='password' name='password' )
+     
+        input.btn.btn-sm.btn-warning(type='submit' value='Login')
